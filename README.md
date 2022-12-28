@@ -68,3 +68,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## This branch is for learning basic of jsx and element create  
+'const root=ReactDom.createRoot(getElementById('root') 
+const element=\<h1>hello,world\<\h1> 
+root.render(element)

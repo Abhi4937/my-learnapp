@@ -73,3 +73,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 `const root=ReactDom.createRoot(getElementById('root'); 
 const element=<h1>hello,world<\h1> 
 root.render(element)`
+
+### sample to create a functional and class component and pass parameters to component using props
+* we are rendering the entire root but only clock element/component gets rendered(function of react vdom)
+* we created 2 components: 
+    1. function component in which we pass name as prop
+    2. class component in which we pass date as prop

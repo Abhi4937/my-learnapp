@@ -40,4 +40,25 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <script>
+    function fetchPost(){
+    return new Promise((resolve,reject)=>{
+        try {
+            resolve("This my first Post");
+        } catch (error) {
+            reject("error in feteching the post:"+error);
+        }
+    });
+}
+
+function fetchComment(){
+    return new Promise((resolve,reject)=>{
+        try {
+            resolve("This my first Comment");
+        } catch (error) {
+            reject("error in feteching the post:"+error);
+        }
+    });
+}
+  </script>
 </html>

@@ -89,3 +89,17 @@ root.render(element)`
 
 ### this is extraction of component example
 * from above info we have extraction the userInfo with further extraction of avatar component.
+
+## Adding state variable and life cycle methods 
+* have added state variable to <clock/> component instead of passing props from app.js
+    * note: props are read-only but states are local to components and can change
+* lifecycle methods used:
+    * componentDidMount(): this will run once after the constructor of clock class is set i.e is output of the clock component is rendered i.e clock is mounted. so we include setInterval method in this lifecycle to call tick() function every second
+    * componentWillUnmount(): whenever clock component is removed from DOM, will remove timers setInvterval.
+* order of method that are called.
+    1. constructor of <clock> is called:When <Clock /> is passed to root.render(), React calls the constructor of the Clock component. Since Clock needs to display the current time, it initializes this.state with an object including the current time. We will later update this state.
+    2. render() of clock component:React then calls the Clock component’s render() method. This is how React learns what should be displayed on the screen. React then updates the DOM to match the Clock’s render output.
+    3. componentDidMount():When the Clock output is inserted in the DOM, React calls the componentDidMount() lifecycle method. Inside it, the Clock component asks the browser to set up a timer to call the component’s tick() method once a second.
+    4. setState():Every second the browser calls the tick() method. Inside it, the Clock component schedules a UI update by calling setState() with an object containing the current time. Thanks to the setState() call, React knows the state has changed, and calls the render() method again to learn what should be on the screen. This time, this.state.date in the render() method will be different, and so the render output will include the updated time. React updates the DOM accordingly.
+        * Note: whenever there is change in state or new props render() method of that component will be called.
+    5.componentWillUnmount(): If the Clock component is ever removed from the DOM, React calls the componentWillUnmount() lifecycle method so the timer is stopped. 

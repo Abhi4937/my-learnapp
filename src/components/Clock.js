@@ -15,7 +15,8 @@ export default class Clock extends React.Component{
         clearInterval(this.TimerID);
     }
     tick(){
-        this.setState({date: new Date()});
+       // this.setState({date: new Date()}); //this is also correct
+       this.setState((state,props)=>({date: new Date()})); //this is more appropriate way
     }
 
     render(){

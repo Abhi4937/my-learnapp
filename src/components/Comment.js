@@ -1,14 +1,8 @@
+import UserInfo from "./UserInfo";
 export default function Comment(props){
     return(
         <div className="comments">
-            <div className="UserInfo">
-                <img className="Avatar" 
-                    src="./" 
-                    alt="this is pic with no src" />
-                <div className="UserInfo-name">
-                    {props.users.name}
-                </div>
-            </div>
+            <UserInfo users={props.users}/>
             <div className="comment-test">
                 {props.text}
             </div>

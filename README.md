@@ -86,3 +86,6 @@ root.render(element)`
     * comment-text
     * comment-date
 * in this branch we have one "Comment.js" component which has all element which we will split in next sub-branch
+
+### this is extraction of component example
+* from above info we have extraction the userInfo with further extraction of avatar component.

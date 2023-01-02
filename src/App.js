@@ -10,7 +10,7 @@ function App() {
           Learn React
           {element}
           <User name='Abhishek'/>
-          <Clock date={new Date().toLocaleTimeString()}/>
+          <Clock/>
           <Comment users={{name:"Abhishek"}} text="my comment text" date={new Date().toLocaleTimeString()}/>
     </div>
   );

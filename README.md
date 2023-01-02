@@ -102,4 +102,28 @@ root.render(element)`
     3. componentDidMount():When the Clock output is inserted in the DOM, React calls the componentDidMount() lifecycle method. Inside it, the Clock component asks the browser to set up a timer to call the component’s tick() method once a second.
     4. setState():Every second the browser calls the tick() method. Inside it, the Clock component schedules a UI update by calling setState() with an object containing the current time. Thanks to the setState() call, React knows the state has changed, and calls the render() method again to learn what should be on the screen. This time, this.state.date in the render() method will be different, and so the render output will include the updated time. React updates the DOM accordingly.
         * Note: whenever there is change in state or new props render() method of that component will be called.
-    5.componentWillUnmount(): If the Clock component is ever removed from the DOM, React calls the componentWillUnmount() lifecycle method so the timer is stopped. 
+    5.componentWillUnmount(): If the Clock component is ever removed from the DOM, React calls the componentWillUnmount() lifecycle method so the timer is stopped.
+
+### state update are merged
+* When you call setState(), React merges the object you provide into the current state.
+    * For example, your state may contain several independent variables:
+    `window.fetchPost().then(response=>{
+            this.setState((state)=>({  
+                post: response  
+                })); 
+             });`
+* Then you can update them independently with separate setState() calls:  
+'componentDidMount(){
+        window.fetchPost().then(response=>{
+            this.setState((state)=>({
+                post: response
+            }));
+        });
+        window.fetchComment().then((response)=>{
+            this.setState((state)=>({
+                comments: response
+            }));
+        });
+    }`
+* The merging is shallow, so this.setState({comments}) leaves this.state.posts intact, but completely replaces this.state.comments.
+

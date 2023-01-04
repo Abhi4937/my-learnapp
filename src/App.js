@@ -10,7 +10,11 @@ function App() {
     <div className="App">
           Learn React
           {element}
-          <User name='Abhishek'/>
+          <div className='Users'>
+          <User className="name1" name='Abhishek'/>
+          <User className="name2" name="Esha"/>
+          <User className="name3" name="Anzal"/>
+          </div>
           <Clock/>
           <Comment users={{name:"Abhishek"}} text="my comment text" date={new Date().toLocaleTimeString()}/>
           <PostComments/>

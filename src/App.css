@@ -1,3 +1,14 @@
 .App{
   text-align: center;
 }
+.form1{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.form1 .fs1{
+  display:flex;
+  flex-flow:column wrap;
+}

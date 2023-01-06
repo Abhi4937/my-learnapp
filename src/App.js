@@ -4,6 +4,7 @@ import Clock from './components/Clock';
 import Comment from './components/Comment';
 import PostComments from './components/PostComments';
 import Login from './components/Login';
+import LoginControl from './components/ConditionalRendering';
 
 function App() {
   const element=<h1>Hello, World</h1>
@@ -16,6 +17,7 @@ function App() {
           <Comment users={{name:"Abhishek"}} text="my comment text" date={new Date().toLocaleTimeString()}/>
           <PostComments/>
           <Login/>
+          <LoginControl/>
     </div>
   );
 }

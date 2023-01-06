@@ -127,3 +127,10 @@ root.render(element)`
     }`
 * The merging is shallow, so this.setState({comments}) leaves this.state.posts intact, but completely replaces this.state.comments.
 
+### list and keys
+* Note key is required for list of components for tracking but it is not send as props parameter to use the that value use different variable
+as shown in example
+* also actual list items should be use as different component with no key, key should be used when calling the list component as shown in example
+* we can use index as key but should be avoided
+* key must be unique among siblings but can be same for different list
+* we can use inline map 

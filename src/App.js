@@ -5,6 +5,7 @@ import Comment from './components/Comment';
 import PostComments from './components/PostComments';
 import Login from './components/Login';
 import LoginControl from './components/ConditionalRendering';
+import ListKeys from './components/ListKey';
 
 function App() {
   const element=<h1>Hello, World</h1>
@@ -18,6 +19,7 @@ function App() {
           <PostComments/>
           <Login/>
           <LoginControl/>
+          <ListKeys/>
     </div>
   );
 }

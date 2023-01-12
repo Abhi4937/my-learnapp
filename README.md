@@ -68,3 +68,25 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Understanding state, props, and lifecycle methods and when, how they are called in react
+* there are three ways in which re-rendering of component happens
+    1. when state of the component changes.
+        * note: assigning same value again will change the state 
+    2. when props of the component passed from parent component changes.
+        * Note: wether you pass props or pass same props, it will always consider new props so it props changes.
+    3. when parent component is rendered
+
+    * above three causes a component to re-render
+
+* the above three will cause following lifecycle to run
+    1. componentDidUpdate(prevProps, prevState, snapshot)
+    2. render()
+* when first time component is added in DOM following lifecycle is called
+    1. constructor(props)
+    2. render()
+    3. componentDidMount()
+
+ * Note:
+componentDidUpdate() will not be invoked if shouldComponentUpdate() returns false.
+* If your component implements the getSnapshotBeforeUpdate() lifecycle (which is rare), the value it returns will be passed as a third “snapshot” parameter to componentDidUpdate(). Otherwise this parameter will be undefined.
+* https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html

@@ -1,9 +1,12 @@
+import { ThemeContext } from "./Context";
 import ThemeButton from "./ThemeButton";
 
 export default function Toolbar(props){
     return(
         <div>
-            <ThemeButton theme={props.theme}/>
+            <ThemeContext.Provider value="dark">
+            <ThemeButton/>
+            </ThemeContext.Provider>
         </div>
     )
 }
